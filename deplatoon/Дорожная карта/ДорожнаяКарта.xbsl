@@ -1,0 +1,166 @@
+метод СодержимоеHtml(): Строка
+    
+    пер СодержимоеHtml: Строка
+    
+    СодержимоеHtml += Стили()
+    СодержимоеHtml += Шапка()
+    СодержимоеHtml += ТабличнаяЧасть()
+    возврат СодержимоеHtml
+;
+
+
+метод Стили(): Строка
+    пер Стили = 
+"
+<style>
+.design-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: Ubuntu Mono;
+}
+
+.design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline {
+  width: 30%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-content {
+  background: #364581;
+  -webkit-box-shadow: 5px 5px 10px #1a1a1a, 5px -5px 1px #242424;
+          box-shadow: 5px 5px 10px #1a1a1a, 5px -5px 1px #242424;
+  border-radius: 5px;
+  color: white;
+  padding: 0.15rem;
+  transition: 0.4s ease;
+  overflow-wrap: break-word !important;
+  margin: 1rem;
+  margin-bottom: 20px;
+
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.timeline-content:hover {
+  background: white;
+  -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 25px #242424;
+          box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 25px #242424;
+  color: #364581;
+}
+
+.timeline-component {
+  margin: 0px 20px 20px 20px;
+}
+
+.timeline-empty {
+    color: black;
+    padding: 1.75rem;
+    transition: 0.4s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+  }
+  .timeline-middle {
+    position: relative;
+    background-image: linear-gradient(45deg, rgb(97%, 63%, 10%, 1), #E94057, #8A2387);
+    width: 3px;
+    height: 100%;
+  }
+  .main-middle {
+    opacity: 0;
+  }
+  .timeline-circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, rgb(97%, 63%, 10%, 1), #E94057, rgb(97%, 63%, 10%, 1));
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+</style>
+"
+
+    возврат Стили
+;
+
+метод Шапка(): Строка
+    пер Шапка = 
+"
+<section class='design-section'>
+<div class='timeline'>
+
+"
+    возврат Шапка
+;
+
+
+метод ТабличнаяЧасть(): Строка
+    пер ТабличнаяЧасть: Строка
+        
+     
+    пер Итератор = 0
+    
+    для Строка из ДанныеДляОтображения
+        
+        если Итератор % 2 == 0
+            ТабличнаяЧасть += ПраваяКарточка(Строка.Ключ.Представление(), Строка.Значение.Представление())   
+        иначе
+            ТабличнаяЧасть += ЛеваяКарточка(Строка.Ключ.Представление(), Строка.Значение.Представление()) 
+        ;
+        Итератор += 1
+    ;
+    
+    возврат ТабличнаяЧасть
+
+;
+
+
+метод ПраваяКарточка(Дата: Строка, Событие: Строка): Строка
+    знч ПраваяКарточка =
+"
+<div class='timeline-empty'>%Дата</div>
+
+<div class='timeline-middle'>
+    <div class='timeline-circle'></div>
+</div>
+<div class='timeline-component timeline-content'>
+    <h3>%Событие</h3>
+<p>Статус изменен</p>
+</div>
+"
+    возврат ПраваяКарточка
+;
+
+метод ЛеваяКарточка(Дата: Строка, Событие: Строка): Строка
+    знч ЛеваяКарточка =
+"
+<div class='timeline-component timeline-content'>
+    <h3>%Событие</h3>
+<p>Статус изменен</p>
+</div>
+<div class='timeline-middle'>
+    <div class='timeline-circle'></div>
+</div>
+<div class='timeline-empty'>%Дата</div>
+"
+    возврат ЛеваяКарточка
+;
