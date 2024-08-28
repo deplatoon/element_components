@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table {
+            width: 100%;
+            border: none;
+            margin-bottom: 20px;
+            border-collapse: separate;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .table thead th {
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            padding: 10px 15px;
+            background: #EDEDED;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+        }
+
+        .table tr th:first-child,
+        .table tr td:first-child {
+            border-left: 1px solid #ddd;
+        }
+
+        .table tr th:last-child,
+        .table tr td:last-child {
+            border-right: 1px solid #ddd;
+        }
+
+        .table thead tr th:first-child {
+            border-radius: 20px 0 0 0;
+        }
+
+        .table thead tr th:last-child {
+            border-radius: 0 20px 0 0;
+            
+        }
+
+        .table tbody td {
+            text-align: right;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            vertical-align: top;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background: #F8F8F8;
+        }
+
+        .table tbody tr:last-child td {
+            border-bottom: 1px solid #ddd;
+            background: #E0FFFF;
+            font-weight: bold;
+        }
+
+        .table tbody tr:last-child td:first-child {
+            border-radius: 0 0 0 20px;
+        }
+
+        .table tbody tr:last-child td:last-child {
+            border-radius: 0 0 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th colspan="3">Показатель1</th>
+                <th colspan="3">Показатель2</th>
+
+            </tr>
+            <tr>
+                <th></th>
+                <th>МесяцТекущий</th>
+                <th>МесяцПрошлый</th>
+                <th>%</th>
+                <th>МесяцТекущий</th>
+                <th>МесяцПрошлый</th>
+                <th>%</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Всего карт:</td>
+                <td>ВсегоКартПоказатель1Текущий</td>
+                <td>ВсегоКартПоказатель1Прошлый</td>
+                <td style="color: ВсегоКартПоказатель1ПриростЦвет; font-weight: bold;">ВсегоКартПоказатель1Прирост %</td>
+                <td>ВсегоКартПоказатель2Текущий</td>
+                <td>ВсегоКартПоказатель2Прошлый</td>
+                <td style="color: ВсегоКартПоказатель2ПриростЦвет; font-weight: bold;">ВсегоКартПоказатель2Прирост %</td>
+            </tr>
+            <tr>
+                <td>Активные карты за последние 3 месяца:</td>
+                <td>АктивныеКарты3Показатель1Текущий</td>
+                <td>АктивныеКарты3Показатель1Прошлый</td>
+                <td style="color: АктивныеКарты3Показатель1ПриростЦвет; font-weight: bold;">АктивныеКарты3Показатель1Прирост %</td>
+                <td>АктивныеКарты3Показатель2Текущий</td>
+                <td>АктивныеКарты3Показатель2Прошлый</td>
+                <td style="color: АктивныеКарты3Показатель2ПриростЦвет; font-weight: bold;">АктивныеКарты3Показатель2Прирост %</td>
+            </tr>
+            <tr>
+                <td>6 месяцев:</td>
+                <td>АктивныеКарты6Показатель1Текущий</td>
+                <td>АктивныеКарты6Показатель1Прошлый</td>
+                <td style="color: АктивныеКарты6Показатель1ПриростЦвет; font-weight: bold;">АктивныеКарты6Показатель1Прирост %</td>
+                <td>АктивныеКарты6Показатель2Текущий</td>
+                <td>АктивныеКарты6Показатель2Прошлый</td>
+                <td style="color: АктивныеКарты6Показатель2ПриростЦвет; font-weight: bold;">АктивныеКарты6Показатель2Прирост %</td>
+            </tr>
+            <tr>
+                <td>12 месяцев:</td>
+                <td>АктивныеКарты12Показатель1Текущий</td>
+                <td>АктивныеКарты12Показатель1Прошлый</td>
+                <td style="color: АктивныеКарты12Показатель1ПриростЦвет; font-weight: bold;">АктивныеКарты12Показатель1Прирост %</td>
+                <td>АктивныеКарты12Показатель2Текущий</td>
+                <td>АктивныеКарты12Показатель2Прошлый</td>
+                <td style="color: АктивныеКарты12Показатель2ПриростЦвет; font-weight: bold;">АктивныеКарты12Показатель2Прирост %</td>
+            </tr>
+            <tr>
+                <td>Сумма бонусов:</td>
+                <td>СуммаБонусовПоказатель1Текущий</td>
+                <td>СуммаБонусовПоказатель1Прошлый</td>
+                <td style="color: СуммаБонусовПоказатель1ПриростЦвет; font-weight: bold;">СуммаБонусовПоказатель1Прирост %</td>
+                <td>СуммаБонусовПоказатель2Текущий</td>
+                <td>СуммаБонусовПоказатель2Прошлый</td>
+                <td style="color: СуммаБонусовПоказатель2ПриростЦвет; font-weight: bold;">СуммаБонусовПоказатель2Прирост %</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
